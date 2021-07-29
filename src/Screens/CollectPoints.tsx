@@ -7,7 +7,7 @@ import DogPaws from "../Images/details1.svg";
 import "../Styles/Screens_sty/collectPoints.css";
 import { MapContainer, TileLayer } from "react-leaflet";
 
-import "leaflet/dist/leaflet.css";
+import 'leaflet/dist/leaflet.css'
 
 const CollectPoints = () => {
   return (
@@ -26,17 +26,13 @@ const CollectPoints = () => {
           <img src={DogPaws} alt="Patinhas de cachorro" />
         </section>
       </aside>
-      <div>
-        <MapContainer
-          center={[5.1952368, -37.34164]}
-          zoom={15}
-          style={{ width: "100%", height: "100%" }}
-        >
-          <TileLayer
-            url={`http://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?accsess_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
-          />
-        </MapContainer>
-      </div>
+      <MapContainer
+        center={[-27.2092052, -49.6401092]}
+        zoom={15}
+        style={{ width: "100%", height: "100%" }}
+      >
+        <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      </MapContainer>
       <Link to="" className="create-New-Point">
         <FiPlus color="#fff" size={32} />
       </Link>
