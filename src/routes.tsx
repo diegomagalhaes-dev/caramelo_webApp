@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import CollectPoints from "./Screens/CollectPoints";
-import Landing from "./Screens/Landing";
+import CollectPoints from "./Screens/Collect Points Page/CollectPoints";
+import Landing from "./Screens/Landing Page/Landing";
 
 const routes = () => {
   return (
