@@ -93,4 +93,36 @@ export const StyCollectPoints = styled.div`
   .leaflet-container {
     z-index: 5;
   }
+
+  & .map-popup .leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 08);
+    border-radius: 20px;
+    box-shadow: none;
+  }
+
+  & .map-popup .leaflet-popup-content {
+    color: #3fa9b2;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 8px 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & a {
+      width: 40px;
+      height: 40px;
+      background: #53d0d1;
+      box-shadow: 17.286821365356445px 27.65891456604004px 41.488372802734375px 0px #178ea629;
+      border-radius: 12px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  & .map-popup .leaflet-popup-tip-container {
+    display: none;
+  }
 `;

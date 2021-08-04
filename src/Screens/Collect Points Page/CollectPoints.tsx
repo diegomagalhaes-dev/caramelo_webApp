@@ -1,15 +1,24 @@
 import React, { useState, useEffect } from "react";
 import MarkMap from "../../Images/markMap.svg";
-import { FiArrowLeft } from "react-icons/fi";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { FiPlus } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import DogPaws from "../../Images/details1.svg";
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, TileLayer, Popup } from "react-leaflet";
+import Leaflet from "leaflet";
 
 import { StyCollectPoints } from "./StyCollectPoints";
 
 import "leaflet/dist/leaflet.css";
 import useGeolocalization from "../../Utils/useLocalization";
+
+const mapIcon = Leaflet.icon({
+  iconUrl: MarkMap,
+
+  iconSize: [60, 64],
+  iconAnchor: [24, 54],
+  popupAnchor: [120, 10],
+});
 
 const CollectPoints = () => {
   const location = useGeolocalization();
@@ -40,6 +49,22 @@ const CollectPoints = () => {
             <TileLayer
               url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
             />
+            <Marker
+              position={[location.coordinates.lat, location.coordinates.lng]}
+              icon={mapIcon}
+            >
+              <Popup
+                closeButton={false}
+                minWidth={200}
+                maxWidth={200}
+                className="map-popup"
+              >
+                Comedouro um
+                <Link to="/">
+                  <FiArrowRight size={20} color="#fff" />
+                </Link>
+              </Popup>
+            </Marker>
           </MapContainer>
           <Link to="/" className="create-New-Point">
             <FiPlus color="#fff" size={32} />
