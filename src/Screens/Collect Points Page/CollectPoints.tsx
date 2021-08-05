@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MarkMap from "../../Images/markMap.svg";
+import bone from "../../Images/bone.svg";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { FiPlus } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -11,17 +12,34 @@ import { StyCollectPoints } from "./StyCollectPoints";
 
 import "leaflet/dist/leaflet.css";
 import useGeolocalization from "../../Utils/useLocalization";
+import { api } from "../../services/api";
 
 const mapIcon = Leaflet.icon({
   iconUrl: MarkMap,
 
   iconSize: [60, 64],
   iconAnchor: [24, 54],
-  popupAnchor: [120, 10],
+  popupAnchor: [180, 10],
 });
+
+interface FeedersMap {
+  id: number;
+  latitude: number;
+  longitude: number;
+  image: {
+    url: string;
+  };
+}
 
 const CollectPoints = () => {
   const location = useGeolocalization();
+  const [feeders, setFeeders] = useState<FeedersMap[]>([]);
+
+  useEffect(() => {
+    api.get("/comedouros").then((response) => {
+      setFeeders(response.data);
+    });
+  }, []);
 
   return (
     <>
@@ -35,9 +53,8 @@ const CollectPoints = () => {
               </Link>
             </header>
             <section className="collect-point-content">
-              <img src={MarkMap} alt="Ponto com comedouro" />
+              <img src={bone} alt="Ponto com comedouro" />
               <h2>Encontre os comedouros mais próximos a você.</h2>
-              <p>Ative sua localização!</p>
               <img src={DogPaws} alt="Patinhas de cachorro" />
             </section>
           </aside>
@@ -49,24 +66,28 @@ const CollectPoints = () => {
             <TileLayer
               url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
             />
-            <Marker
-              position={[location.coordinates.lat, location.coordinates.lng]}
-              icon={mapIcon}
-            >
-              <Popup
-                closeButton={false}
-                minWidth={200}
-                maxWidth={200}
-                className="map-popup"
-              >
-                Comedouro um
-                <Link to="/">
-                  <FiArrowRight size={20} color="#fff" />
-                </Link>
-              </Popup>
-            </Marker>
+            {feeders.map((feeder) => {
+              return (
+                <Marker
+                  position={[feeder.latitude, feeder.longitude]}
+                  icon={mapIcon}
+                  key={feeder.id}
+                >
+                  <Popup minWidth={260} className="map-popup">
+                    <img src={feeder.image.url} alt="Comedouro" />
+                    <a
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
+                      href={`https://www.google.com/maps/dir/?api=1&destination=${feeder.latitude},${feeder.longitude}`}
+                    >
+                      <p>Ver rota no Google Maps</p>
+                    </a>
+                  </Popup>
+                </Marker>
+              );
+            })}
           </MapContainer>
-          <Link to="/" className="create-New-Point">
+          <Link to="/feeder/create" className="create-New-Point">
             <FiPlus color="#fff" size={32} />
           </Link>
         </StyCollectPoints>

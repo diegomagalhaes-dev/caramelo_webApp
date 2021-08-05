@@ -98,31 +98,41 @@ export const StyCollectPoints = styled.div`
     background: rgba(255, 255, 255, 08);
     border-radius: 20px;
     box-shadow: none;
+    box-shadow: 0px .5px 2px  rgba(0, 0, 0, 0.2);
   }
 
   & .map-popup .leaflet-popup-content {
     color: #3fa9b2;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
-    margin: 8px 12px;
 
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin: 0;
+    & img {
+      width: 100%;
+      border-radius: 20px;
+    }
 
     & a {
-      width: 40px;
-      height: 40px;
-      background: #53d0d1;
-      box-shadow: 17.286821365356445px 27.65891456604004px 41.488372802734375px 0px #178ea629;
-      border-radius: 12px;
-
       display: flex;
       justify-content: center;
       align-items: center;
+      text-decoration: none;
     }
   }
   & .map-popup .leaflet-popup-tip-container {
     display: none;
+  }
+
+  & .leaflet-container a.leaflet-popup-close-button {
+    padding: 8px;
+    color: #3fa9b2;
+    font-size: 28px;
+    font-weight: bold;
+    top: 5px;
+    right: 18px;
   }
 `;
