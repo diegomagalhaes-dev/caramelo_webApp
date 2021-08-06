@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const PageCreateFeeder = styled.div`
   display: flex;
+  flex-direction: column;
 
   & main {
     flex: 1;
+    transform: translateY(-110px);
   }
 
   & form.create-feeder-form {
@@ -33,7 +35,7 @@ export const PageCreateFeeder = styled.div`
 
     font-size: 32px;
     line-height: 34px;
-    color: #5c8599;
+    color: #77a7c2;
     font-weight: 700;
 
     border-bottom: 1px solid #d3e2e5;
@@ -41,84 +43,55 @@ export const PageCreateFeeder = styled.div`
     padding-bottom: 24px;
   }
 
-  & form.create-feeder-form .input-block {
-  }
-
-  & form.create-feeder-form .input-block + .input-block {
-    margin-top: 24px;
-  }
-
-  & form.create-feeder-form .input-block label {
-    display: flex;
-    color: #8fa7b3;
-    margin-bottom: 8px;
-    line-height: 24px;
-  }
-
-  & form.create-feeder-form .input-block label span {
-    font-size: 14px;
-    color: #8fa7b3;
-    margin-left: 24px;
-    line-height: 24px;
-  }
-
-  & form.create-feeder-form .input-block input,
-  & form.create-feeder-form .input-block textarea {
-    width: 100%;
-    background: #f5f8fa;
-    border: 1px solid #d3e2e5;
-    border-radius: 20px;
-    outline: none;
-    color: #5c8599;
-  }
-
-  & form.create-feeder-form .input-block input {
-    height: 64px;
-    padding: 0 16px;
-  }
-
-  & form.create-feeder-form .input-block textarea {
-    min-height: 120px;
-    max-height: 240px;
-    resize: vertical;
-    padding: 16px;
-    line-height: 28px;
-  }
-
   & form.create-feeder-form .input-block .new-image {
     width: 100%;
-    height: 64px;
+    height: 128px;
     background: #f5f8fa;
     border: 1px dashed #96d2f0;
     border-radius: 20px;
     cursor: pointer;
   }
 
-  & form.create-feeder-form .input-block .button-select {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+  & form .confirm-button {
+    margin-top: 60px;
 
-  & form.create-feeder-form .input-block .button-select button {
-    height: 64px;
-    background: #f5f8fa;
-    border: 1px solid #d3e2e5;
-    color: #5c8599;
-    cursor: pointer;
-  }
+    width: 100%;
+    background-color: #023047;
+    color: #ffffff;
+    padding: 10px;
 
-  & form.create-feeder-form .input-block .button-select button.active {
-    background: #edfff6;
-    border: 1px solid #a1e9c5;
-    color: #37c77f;
-  }
+    border: none;
 
-  & form.create-feeder-form .input-block .button-select button:first-child {
-    border-radius: 20px 0px 0px 20px;
+    border-radius: 7px;
   }
+  & form.create-feeder-form .create-feeder-map {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 
-  & form.create-feeder-form .input-block .button-select button:last-child {
-    border-radius: 0 20px 20px 0;
-    border-left: 0;
+    align-items: center;
+
+    justify-content: center;
+    border-radius: 20px;
+    background: #77a7c2;
+    border: solid 1px #d3e2e5;
+
+    & p {
+      padding: 10px 20px;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    & .map {
+      border-radius: 20px;
+      border-bottom: solid 1px #d3e2e5;
+    }
   }
 `;
