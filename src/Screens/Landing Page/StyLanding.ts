@@ -5,14 +5,13 @@ export const StyLanding = styled.div`
 
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(329.54deg, #577590 0%, #00c7c7 100%);
+  background: linear-gradient(329.54deg, #577590 0%, #8ECAE6 100%);
   display: flex;
   align-items: center;
   justify-content: center;
 
   main {
-    max-width: 980px;
-    max-height: 620px;
+    max-width: 1024px;
     width: 100%;
     height: 100%;
     position: relative;
@@ -25,14 +24,14 @@ export const StyLanding = styled.div`
   header {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 30px;
   }
 
   article {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-height: 25rem;
+    max-height: 30rem;
     height: 100%;
     display: flex;
     align-items: center;
@@ -41,8 +40,7 @@ export const StyLanding = styled.div`
     width: 100%;
 
     img {
-      max-width: 65vw;
-      height: 100%;
+      max-width: 32vw;
     }
   }
 
@@ -51,38 +49,50 @@ export const StyLanding = styled.div`
     flex-direction: column;
 
     h1 {
-      max-width: 35vw;
+      max-width: 40vw;
 
-      font-size: 62px;
-      line-height: 72px;
+      font-size: 48px;
+      line-height: 62px;
       font-weight: 900;
       width: 100%;
+    }
+
+    p{
+      margin-top: 10px;
+      font-size: 28px;
+      font-weight: 500;
+      color: #ffffff;
+      opacity: 80%;
     }
     a {
       text-decoration: none;
 
-      margin-top: 32px;
+      margin-top: 44px;
 
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
 
-      max-width: 180px;
+      max-width: 190px;
       width: 100%;
 
-      padding: 4px 10px;
-      background-color: #f8961e;
-      border-radius: 12px;
+      padding: 8px 12px;
+      background-color: #F8961E;
+      border-radius: 10px;
 
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 800;
       letter-spacing: 0.5px;
       color: #ffffff;
 
       transition: background-color 0.2s;
+
+      & img{
+        max-width: 54px;
+      }
     }
     a:hover {
-      background-color: #d4882a;
+      background-color: #F8961E;
     }
     span {
       margin-right: 4px;
