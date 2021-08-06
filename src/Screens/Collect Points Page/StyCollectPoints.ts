@@ -8,20 +8,19 @@ export const StyCollectPoints = styled.div`
   display: flex;
 
   aside {
-    width: 28vw;
-    background: linear-gradient(329.54deg, #577590 0%, #00c7c7 100%);
+    width: 32vw;
+    background: linear-gradient(329.54deg, #577590 0%, #8ecae6 100%);
 
     display: flex;
     flex-direction: column;
     position: relative;
     align-items: center;
-    justify-content: flex-start;
   }
 
   aside > header {
     position: absolute;
     top: 1.2rem;
-    right: 1.5rem;
+    left: 1.8rem;
   }
 
   aside > header a {
@@ -31,26 +30,20 @@ export const StyCollectPoints = styled.div`
     text-decoration: none;
   }
 
-  aside > header a span {
-    color: #fff;
-    margin-left: 5px;
-  }
-
   aside section {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
-    margin-top: 8rem;
-    padding: 1rem 2.5rem;
+
+    margin-top: 30vh;
+    padding: 0px 30px;
   }
 
   aside section h2 {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 800;
-    line-height: 42px;
-
-    margin: 0.8rem 0;
+    line-height: 38px;
   }
 
   aside section img:first-child {
@@ -60,10 +53,11 @@ export const StyCollectPoints = styled.div`
 
   aside section img:last-child {
     position: absolute;
-    bottom: 1rem;
-    left: 15%;
+    bottom: 2rem;
+    left: 50%;
+    margin-left: -7rem;
 
-    max-width: 12rem;
+    max-width: 14rem;
     width: 100%;
   }
 
@@ -78,7 +72,7 @@ export const StyCollectPoints = styled.div`
 
     padding: 8px;
 
-    background: #f8961e;
+    background: #023047;
     right: 1.2rem;
     bottom: 1.2rem;
     border-radius: 12px;
@@ -87,10 +81,10 @@ export const StyCollectPoints = styled.div`
   }
 
   .create-New-Point:hover {
-    background-color: #d4882a;
+    background-color: #305C72;
   }
 
-  .leaflet-container {
+  .leaflet-container {  
     z-index: 5;
   }
 
@@ -98,11 +92,11 @@ export const StyCollectPoints = styled.div`
     background: rgba(255, 255, 255, 08);
     border-radius: 20px;
     box-shadow: none;
-    box-shadow: 0px .5px 2px  rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.2);
   }
 
   & .map-popup .leaflet-popup-content {
-    color: #3fa9b2;
+    color: #023047;
     font-size: 16px;
     font-weight: bold;
 
@@ -121,6 +115,7 @@ export const StyCollectPoints = styled.div`
       justify-content: center;
       align-items: center;
       text-decoration: none;
+      color: #023047;
     }
   }
   & .map-popup .leaflet-popup-tip-container {
@@ -129,7 +124,7 @@ export const StyCollectPoints = styled.div`
 
   & .leaflet-container a.leaflet-popup-close-button {
     padding: 8px;
-    color: #3fa9b2;
+    color: #023047;
     font-size: 28px;
     font-weight: bold;
     top: 5px;
