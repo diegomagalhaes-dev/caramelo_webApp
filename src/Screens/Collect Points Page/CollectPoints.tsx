@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import MarkMap from "../../Images/markMap.svg";
 import bone from "../../Images/bone.svg";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+
 import { FiPlus } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import DogPaws from "../../Images/details1.svg";
 import { MapContainer, Marker, TileLayer, Popup } from "react-leaflet";
 import Leaflet from "leaflet";
+import ArrowLeft from "../../Images/arrow-left.svg";
 
 import { StyCollectPoints } from "./StyCollectPoints";
 
@@ -48,13 +49,12 @@ const CollectPoints = () => {
           <aside>
             <header>
               <Link to="/">
-                <FiArrowLeft size={24} color="#fff" />
-                <span>Voltar para a home</span>
+                <img src={ArrowLeft} alt="Voltar" />
               </Link>
             </header>
             <section className="collect-point-content">
               <img src={bone} alt="Ponto com comedouro" />
-              <h2>Encontre os comedouros mais próximos a você.</h2>
+              <h2>Comedouros mais próximos a você.</h2>
               <img src={DogPaws} alt="Patinhas de cachorro" />
             </section>
           </aside>
