@@ -1,8 +1,9 @@
 import React from "react";
-import { FiArrowLeft } from "react-icons/fi";
+import { CgArrowLongLeft } from "react-icons/cg";
 import { useHistory } from "react-router-dom";
+import ArrowLeft from "../../Images/arrow-left.svg";
 
-import bone from "../../Images/bone.svg";
+import logo from "../../Images/logo.svg";
 
 import { StySidebar } from "./stySidebar";
 
@@ -10,12 +11,19 @@ const Sidebar = () => {
   const { goBack } = useHistory();
   return (
     <StySidebar>
-      <img src={bone} alt="Comedouro" />
-      <footer>
+      <header>
         <button onClick={goBack} type="button">
-          <FiArrowLeft size={24} color="#fff" />
+          <img src={ArrowLeft} alt="Voltar" />
         </button>
-      </footer>
+        <img src={logo} alt="Comedouro" />
+      </header>
+      <aside>
+        <h1>Fico feliz por sua boa ação!</h1>
+        <p>
+          Preencha o fórmulário para que <br /> todos possam localizar o
+          comedouro e ajudar.
+        </p>
+      </aside>
     </StySidebar>
   );
 };
