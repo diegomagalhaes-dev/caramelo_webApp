@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, FormEvent } from "react";
 import { MapContainer, Marker, TileLayer, useMapEvents } from "react-leaflet";
 import L from "leaflet";
+import Dropzone from "../../Components/Dropzone/Dropzone";
 
 import { PageCreateFeeder } from "./StyCreateFeeder";
-
-import { FiPlus } from "react-icons/fi";
 
 import mapMarkerImg from "../../Images/markMap.svg";
 import Sidebar from "../../Components/Sidebar Component/Sidebar";
 import useGeolocalization from "../../Utils/useLocalization";
+import { useEffect } from "react";
+import { api } from "../../services/api";
+import { useHistory } from "react-router-dom";
 
 const happyMapIcon = L.icon({
   iconUrl: mapMarkerImg,
@@ -19,37 +21,71 @@ const happyMapIcon = L.icon({
 });
 
 const FeederMap = () => {
+  const history = useHistory();
+
+  const [selectedFile, setSelectedFile] = useState<File>();
+
   const location = useGeolocalization();
   const [position, setPosition] = useState({
     latitude: 0,
     longitude: 0,
   });
 
+  useEffect(() => {
+    if (location.loaded) {
+      setPosition({
+        latitude: location.coordinates.lat,
+        longitude: location.coordinates.lng,
+      });
+    }
+  }, [location]);
+
   function MarkerMap() {
-    useMapEvents({
+    const map = useMapEvents({
       click(event) {
         const { lat, lng } = event.latlng;
         setPosition({
           latitude: lat,
           longitude: lng,
         });
+        map.flyTo(event.latlng, map.getZoom());
       },
     });
 
-    return position.latitude !== 0 ? (
+    return (
       <Marker
         position={[position.latitude, position.longitude]}
         interactive={false}
         icon={happyMapIcon}
       />
-    ) : null;
+    );
+  }
+
+  async function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+
+    const { latitude, longitude } = position;
+
+    const data = new FormData();
+
+    data.append("latitude", String(latitude));
+    data.append("longitude", String(longitude));
+    if (selectedFile) {
+      data.append("image", selectedFile);
+    }
+
+    await api.post("comedouros", data);
+
+    alert("Cadastro realizado com sucesso!");
+
+    history.push("/app");
   }
 
   return (
     <PageCreateFeeder>
       <Sidebar />
       <main>
-        <form className="create-feeder-form">
+        <form onSubmit={handleSubmit} className="create-feeder-form">
           <fieldset>
             <legend>Informações do comedouro</legend>
             <div className="create-feeder-map">
@@ -60,10 +96,10 @@ const FeederMap = () => {
                   zoom={15}
                   className="map"
                 >
+                  <MarkerMap />
                   <TileLayer
                     url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
                   />
-                  <MarkerMap />
                 </MapContainer>
               )}
               <p>
@@ -71,12 +107,11 @@ const FeederMap = () => {
                 basta reposicionar o marcador)
               </p>
             </div>
+
             <div className="input-block">
               <div className="uploaded-image"></div>
               <label htmlFor="images">Imagem</label>
-              <button className="new-image">
-                <FiPlus size={24} color="#F8961E" />
-              </button>
+              <Dropzone onFileUploaded={setSelectedFile} />
             </div>
           </fieldset>
           <button className="confirm-button" type="submit">
