@@ -53,16 +53,22 @@ export const PageCreateFeeder = styled.div`
   }
 
   & form .confirm-button {
-    margin-top: 60px;
+    margin-top: 40px;
 
+    cursor: pointer;
     width: 100%;
-    background-color: #023047;
+    background: #023047;
     color: #ffffff;
     padding: 10px;
 
     border: none;
 
     border-radius: 7px;
+    transition: background 1s ease;
+  }
+
+  & form .confirm-button:hover {
+    background: #305c72;
   }
   & form.create-feeder-form .create-feeder-map {
     display: flex;
@@ -81,7 +87,7 @@ export const PageCreateFeeder = styled.div`
       font-size: 18px;
       line-height: 22px;
       font-weight: 600;
-      letter-spacing: .02em;
+      letter-spacing: 0.02em;
       color: #ffffff;
       display: flex;
       align-items: center;
@@ -90,7 +96,8 @@ export const PageCreateFeeder = styled.div`
     }
 
     & .map {
-      border-radius: 20px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
       border-bottom: solid 1px #d3e2e5;
     }
   }
