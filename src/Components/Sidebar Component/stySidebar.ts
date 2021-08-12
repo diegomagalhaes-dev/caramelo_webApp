@@ -9,7 +9,8 @@ export const StySidebar = styled.aside`
   flex-direction: column;
   justify-content: center;
   padding: 18px 20px;
-  background: linear-gradient(329.54deg, #577590 0%, #8ecae6 100%);
+  background: linear-gradient(329.54deg, #4C95B6 5.21%, #8CCAE8 55.51%, #8ECAE6 100%);
+
 
   & header {
     max-width: 1120px;

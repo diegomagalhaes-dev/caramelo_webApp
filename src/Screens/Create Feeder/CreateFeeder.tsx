@@ -87,7 +87,6 @@ const FeederMap = () => {
       <main>
         <form onSubmit={handleSubmit} className="create-feeder-form">
           <fieldset>
-            <legend>Informações do comedouro</legend>
             <div className="create-feeder-map">
               {location.loaded && (
                 <MapContainer

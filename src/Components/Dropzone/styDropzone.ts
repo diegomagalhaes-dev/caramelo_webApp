@@ -17,7 +17,7 @@ export const StyDropzone = styled.div`
   }
 
   & p {
-    color: #023047;
+    color: #219EBC;
     font-size: 18px;
     font-weight: 600;
   }

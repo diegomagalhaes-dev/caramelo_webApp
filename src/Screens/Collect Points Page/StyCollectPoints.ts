@@ -9,7 +9,12 @@ export const StyCollectPoints = styled.div`
 
   aside {
     width: 32vw;
-    background: linear-gradient(329.54deg, #577590 0%, #8ecae6 100%);
+    background: linear-gradient(
+      329.54deg,
+      #4c95b6 5.21%,
+      #8ccae8 55.51%,
+      #8ecae6 100%
+    );
 
     display: flex;
     flex-direction: column;
@@ -47,7 +52,8 @@ export const StyCollectPoints = styled.div`
   }
 
   aside section img:first-child {
-    max-width: 5rem;
+    max-width: 3rem;
+    margin-bottom: 2rem;
     width: 100%;
   }
 
@@ -72,7 +78,7 @@ export const StyCollectPoints = styled.div`
 
     padding: 8px;
 
-    background: #023047;
+    background: #219ebc;
     right: 1.2rem;
     bottom: 1.2rem;
     border-radius: 12px;
@@ -81,22 +87,22 @@ export const StyCollectPoints = styled.div`
   }
 
   .create-New-Point:hover {
-    background-color: #305C72;
+    background-color: #305c72;
   }
 
-  .leaflet-container {  
+  .leaflet-container {
     z-index: 5;
   }
 
   & .map-popup .leaflet-popup-content-wrapper {
-    background: rgba(255, 255, 255, 08);
+    background-color: #d4e4ed;
     border-radius: 20px;
     box-shadow: none;
     box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.2);
   }
 
   & .map-popup .leaflet-popup-content {
-    color: #023047;
+    color: #219ebc;
     font-size: 16px;
     font-weight: bold;
 
@@ -115,7 +121,7 @@ export const StyCollectPoints = styled.div`
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      color: #023047;
+      color: #219ebc;
     }
   }
   & .map-popup .leaflet-popup-tip-container {
@@ -124,7 +130,7 @@ export const StyCollectPoints = styled.div`
 
   & .leaflet-container a.leaflet-popup-close-button {
     padding: 8px;
-    color: #023047;
+    color: #219ebc;
     font-size: 28px;
     font-weight: bold;
     top: 5px;

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import MarkMap from "../../Images/markMap.svg";
-import bone from "../../Images/bone.svg";
 
 import { FiPlus } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -53,7 +52,7 @@ const CollectPoints = () => {
               </Link>
             </header>
             <section className="collect-point-content">
-              <img src={bone} alt="Ponto com comedouro" />
+              <img src={MarkMap} alt="Ponto com comedouro" />
               <h2>Comedouros mais próximos a você.</h2>
               <img src={DogPaws} alt="Patinhas de cachorro" />
             </section>

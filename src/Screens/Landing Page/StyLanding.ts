@@ -5,7 +5,12 @@ export const StyLanding = styled.div`
 
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(329.54deg, #577590 0%, #8ECAE6 100%);
+  background: linear-gradient(
+    329.54deg,
+    #4c95b6 5.21%,
+    #8ccae8 55.51%,
+    #8ecae6 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +62,7 @@ export const StyLanding = styled.div`
       width: 100%;
     }
 
-    p{
+    p {
       margin-top: 10px;
       font-size: 28px;
       font-weight: 500;
@@ -77,7 +82,7 @@ export const StyLanding = styled.div`
       width: 100%;
 
       padding: 8px 12px;
-      background-color: #F8961E;
+      background-color: #f8961e;
       border-radius: 10px;
 
       font-size: 24px;
@@ -87,12 +92,12 @@ export const StyLanding = styled.div`
 
       transition: background-color 0.2s;
 
-      & img{
+      & img {
         max-width: 54px;
       }
     }
     a:hover {
-      background-color: #F8961E;
+      background-color: #f8961e;
     }
     span {
       margin-right: 4px;

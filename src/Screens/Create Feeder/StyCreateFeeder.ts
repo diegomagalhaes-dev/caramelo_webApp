@@ -30,19 +30,6 @@ export const PageCreateFeeder = styled.div`
     margin-top: 80px;
   }
 
-  & form.create-feeder-form fieldset legend {
-    width: 100%;
-
-    font-size: 32px;
-    line-height: 34px;
-    color: #77a7c2;
-    font-weight: 700;
-
-    border-bottom: 1px solid #d3e2e5;
-    margin-bottom: 40px;
-    padding-bottom: 24px;
-  }
-
   & form.create-feeder-form .input-block .new-image {
     width: 100%;
     height: 128px;
@@ -57,7 +44,7 @@ export const PageCreateFeeder = styled.div`
 
     cursor: pointer;
     width: 100%;
-    background: #023047;
+    background: #219EBC;
     color: #ffffff;
     padding: 10px;
 
@@ -79,7 +66,7 @@ export const PageCreateFeeder = styled.div`
 
     justify-content: center;
     border-radius: 20px;
-    background: #77a7c2;
+    background: #7FBFDD;
     border: solid 1px #d3e2e5;
 
     & p {
