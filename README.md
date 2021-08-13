@@ -28,15 +28,9 @@
 ➙ <a href="https://pt-br.reactjs.org/">Figma </a> <br>
 ➙ <a href="https://pt-br.reactjs.org/">React.js </a><br>
 ➙ <a href="https://www.typescriptlang.org/">Typescript </a> <br>
-➙ <a href="https://styled-components.com/">Typescript </a> <br>
-<h2>📍Bibliotecas adicionais</h2>
-➙ Axios <br>
-➙ React Router <br>
-➙ Styled-Componets
+➙ <a href="https://styled-components.com/">Styled-components </a> <br>
 <h2 id="layout">✨ Layout</h2>
-<div align="center">
-<img src="./src/Assets/layout.gif">
-</div>
+<iframe src="https://player.vimeo.com/video/586549820?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;h=95a10e5303" width="960" height="522" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="simplescreenrecorder-2021-08-12_12.40.40.mp4"></iframe>
 <h2>💡Rode na sua máquina</h2>
 
 ```
