@@ -30,15 +30,20 @@
 ➙ <a href="https://www.typescriptlang.org/">Typescript </a> <br>
 ➙ <a href="https://styled-components.com/">Styled-components </a> <br>
 <h2 id="layout">✨ Layout</h2>
-<iframe src="https://player.vimeo.com/video/586549820?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;h=95a10e5303" width="960" height="522" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="simplescreenrecorder-2021-08-12_12.40.40.mp4"></iframe>
+<div align="center">
+<img src="./src/Images/layout.gif">
+</div>
+<br>
 <h2>💡Rode na sua máquina</h2>
 
 ```
 # Clone este repositório
-$ git clone https://github.com/diegomagalhaes-dev/crypto-daily.git
+$ git clone https://github.com/diegomagalhaes-dev/caramelo_webApp
 
 # Instale as dependências
 $ yarn 
+
+# Rode a API na sua máquina: https://github.com/diegomagalhaes-dev/caramelo_backend 
 
 # Inicie a aplicação
 $ yarn start
