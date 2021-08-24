@@ -11,7 +11,7 @@ const routes = () => {
         <Route path="/" exact component={Landing} />
         <Route path="/app" component={CollectPoints} />
         <Route path="/feeder/create" component={CreateFeeder} />
-        <Route path="/login" component={SignIn} />
+        <Route path="/login"component={SignIn} />
       </Switch>
     </BrowserRouter>
   );
