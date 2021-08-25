@@ -8,7 +8,7 @@ import { Container, Content, Background } from "./styles";
 import Input from "../../Components/Input/index";
 import logoImg from "../../Images/logo.svg";
 import getValidationErrors from "../../Utils/getValidationErrors";
-import { AuthContext } from "../../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 interface SignInFormData {
   email: string;
@@ -18,9 +18,7 @@ interface SignInFormData {
 const SignIn = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const { user, signIn } = useContext(AuthContext);
-
-  console.log(user);
+  const { signIn } = useAuth();
 
   const handleSubmit = useCallback(
     async (data: SignInFormData) => {
@@ -41,9 +39,11 @@ const SignIn = () => {
           password: data.password,
         });
       } catch (err) {
-        const errors = getValidationErrors(err);
+        if (err instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(err);
 
-        formRef.current?.setErrors(errors);
+          formRef.current?.setErrors(errors);
+        }
       }
     },
     [signIn]
