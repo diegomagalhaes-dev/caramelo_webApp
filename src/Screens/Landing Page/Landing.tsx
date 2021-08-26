@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../Images/logo.svg";
 import homeImg from "../../Images/homePage.svg";
-import { FiArrowRight } from "react-icons/fi";
+import { FiLogIn } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Bone from "../../Images/bone_white.svg";
 
@@ -13,7 +13,13 @@ const Landing = () => {
       <main>
         <header className="header">
           <img src={logo} alt="logo" />
+          <div>
+            <Link to="/login">
+              <FiLogIn size={20} color="#f8961e" /> Acesso restrito
+            </Link>
+          </div>
         </header>
+
         <article>
           <section className="content">
             <h1>

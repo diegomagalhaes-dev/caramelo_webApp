@@ -26,10 +26,38 @@ export const StyLanding = styled.div`
     justify-content: center;
   }
 
-  header {
+  header img {
     position: absolute;
     left: 0;
     top: 30px;
+  }
+
+  header div a {
+    text-decoration: none;
+
+    color: #ffffff;
+
+    position: absolute;
+    right: 0;
+    top: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 8px 12px;
+
+    border-radius: 20px;
+    border: 2px solid #f8961e;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+  }
+
+  header div a:hover {
+    background: #fabd72;
   }
 
   article {
