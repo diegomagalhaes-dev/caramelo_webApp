@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../Images/logo.svg";
 import homeImg from "../../Images/homePage.svg";
-import { FiLogIn } from "react-icons/fi";
+import { BsFillPersonFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Bone from "../../Images/bone_white.svg";
 
@@ -13,11 +13,9 @@ const Landing = () => {
       <main>
         <header className="header">
           <img src={logo} alt="logo" />
-          <div>
             <Link to="/login">
-              <FiLogIn size={20} color="#f8961e" /> Acesso restrito
+              <BsFillPersonFill size={24} color="#ffffff" /> Acesso Restrito
             </Link>
-          </div>
         </header>
 
         <article>

@@ -32,10 +32,13 @@ export const StyLanding = styled.div`
     top: 30px;
   }
 
-  header div a {
+  header a {
     text-decoration: none;
 
     color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
 
     position: absolute;
     right: 0;
@@ -44,20 +47,22 @@ export const StyLanding = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
 
     padding: 8px 12px;
 
     border-radius: 20px;
-    border: 2px solid #f8961e;
-
+    border: 2px solid;
+    border-color: #f8961e;
     cursor: pointer;
 
     transition: background 0.3s ease;
+    transition: border-color 0.5s ease;
   }
 
-  header div a:hover {
-    background: #fabd72;
+  header a:hover {
+    background: #ffac47;
+    border-color: #ffffff;
   }
 
   article {
