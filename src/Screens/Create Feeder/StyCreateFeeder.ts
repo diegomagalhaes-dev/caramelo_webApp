@@ -1,4 +1,42 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const appearFromTop = keyframes`
+
+  from{
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0vh);
+  }
+`;
+
+const appearFromLeft = keyframes`
+
+  from{
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateX(0vw);
+  }
+`;
+const appearFromRight = keyframes`
+
+  from{
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateX(0vw);
+  }
+`;
 
 export const PageCreateFeeder = styled.div`
   display: flex;
@@ -44,7 +82,7 @@ export const PageCreateFeeder = styled.div`
 
     cursor: pointer;
     width: 100%;
-    background: #219EBC;
+    background: #219ebc;
     color: #ffffff;
     padding: 10px;
 
@@ -66,7 +104,7 @@ export const PageCreateFeeder = styled.div`
 
     justify-content: center;
     border-radius: 20px;
-    background: #7FBFDD;
+    background: #7fbfdd;
     border: solid 1px #d3e2e5;
 
     & p {
@@ -87,5 +125,68 @@ export const PageCreateFeeder = styled.div`
       border-top-right-radius: 20px;
       border-bottom: solid 1px #d3e2e5;
     }
+
+    & .fkKDKT img {
+      border-radius: 20px;
+    }
+  }
+`;
+
+export const Popup = styled.div`
+  width: 100vw;
+  height: 100vh;
+
+  animation: ${appearFromTop} 1s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #219ebc;
+
+  gap: 52px;
+
+  article {
+    animation: ${appearFromLeft} 1.2s;
+    h1 {
+      font-size: 56px;
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    p {
+      font-size: 22px;
+      color: #ffffff;
+      font-weight: 500;
+    }
+  }
+
+  img {
+    animation: ${appearFromRight} 1.2s;
+
+    max-width: 300px;
+  }
+
+  button {
+    animation: ${appearFromLeft} 1s;
+
+    text-decoration: none;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    background: #0689a9;
+
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+
+    transition: background 0.4s ease;
+  }
+
+  button:hover {
+    background: #2ec3e7;
   }
 `;
