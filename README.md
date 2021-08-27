@@ -34,7 +34,9 @@
 ➙ <a href="https://react-dropzone.js.org/">React Dropzone </a> <br>
 <h2 id="layout">✨ Layout</h2>
 <div align="center">
-<img src="./src/Images/layout.gif">
+<img src="./src/Images/layout1.gif">
+<br/>
+<img src="./src/Images/layout2.gif">
 </div>
 <br>
 
