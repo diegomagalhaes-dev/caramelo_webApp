@@ -29,7 +29,7 @@ const Dropzone = ({ onFileUploaded }: Props) => {
     <StyDropzone {...getRootProps()}>
       <input {...getInputProps()} accept="image/*" />
       {selectedFileUrl ? (
-        <img src={selectedFileUrl} alt={"Preview imagem do comedouro"} />
+        <img className="feeder_img" src={selectedFileUrl} alt={"Preview imagem do comedouro"} />
       ) : (
         <div className="internalCallDropzone">
           <FiUpload size={22} color="#F8961E" />

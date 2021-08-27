@@ -17,7 +17,7 @@ export const StyDropzone = styled.div`
   }
 
   & p {
-    color: #219EBC;
+    color: #219ebc;
     font-size: 18px;
     font-weight: 600;
   }
@@ -41,5 +41,9 @@ export const StyDropzone = styled.div`
     align-items: center;
 
     cursor: pointer;
+  }
+
+  & .feeder_img {
+    border-radius: 20px;
   }
 `;
