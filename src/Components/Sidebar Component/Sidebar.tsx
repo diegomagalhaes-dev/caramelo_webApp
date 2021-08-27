@@ -20,7 +20,7 @@ const Sidebar = () => {
       <aside>
         <h1>Fico feliz por sua boa ação!</h1>
         <p>
-          Preencha o fórmulário para que <br /> todos possam localizar o
+          Preencha o formulário para que <br /> todos possam localizar o
           comedouro e ajudar.
         </p>
       </aside>
