@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img  style="max-width:260px; width: 100%" alt="Caramelo Web" src="./src/Images/readmeLogo.png" />
+    <img  style="max-width:260px" alt="Caramelo Web" src="./src/Images/readmeLogo.png" />
     <br>
  
 </h1>
